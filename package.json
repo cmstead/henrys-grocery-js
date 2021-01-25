@@ -1,18 +1,31 @@
 {
-  "name": "henrys-grocery",
-  "version": "1.0.0",
-  "description": "Henry's Grocery TDD exercise",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha ./tests/**/*.js"
-  },
-  "author": "Chris Stead",
-  "license": "MIT",
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1"
-  },
-  "dependencies": {
-    "inquirer": "^7.3.3"
-  }
+    "name": "henrys-grocery",
+    "version": "1.0.0",
+    "description": "Henry's Grocery TDD exercise",
+    "main": "index.js",
+    "scripts": {
+        "test": "node ./node_modules/nanocommit/"
+    },
+    "author": "Chris Stead",
+    "license": "MIT",
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^8.2.1",
+        "nanocommit": "^1.15.1"
+    },
+    "dependencies": {
+        "date-fns": "^2.16.1",
+        "inquirer": "^7.3.3"
+    },
+    "nanocommit": {
+        "testCommand": "mocha ./tests/**/*.test.js",
+        "blindCommit": false,
+        "annotations": "nanocommit",
+        "watchFiles": [
+            "./app/**/*.js"
+        ],
+        "defaultCommandArgs": null,
+        "commitMessage": null,
+        "customAnnotations": null
+    }
 }
