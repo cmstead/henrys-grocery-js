@@ -4,10 +4,15 @@ class Basket{
     }
 
     addItem(description, quantity) {
-        this.items.push({
-            description,
-            quantity
-        });
+        if(this.items.find(item => item.description = description)) {
+            let item = this.items.find(item => item.description = description);
+            item.quantity++;
+        } else {
+            this.items.push({
+                description,
+                quantity
+            });    
+        }
     }
 
     getItems() {

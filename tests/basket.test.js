@@ -19,5 +19,21 @@ describe('Basket', function () {
             assert.equal(description, 'bread');
             assert.equal(quantity, 1);
         });
+
+        it('adds item to existing quantity if item is already in basket', function () {
+            const basket = getBasket();
+
+            const description = 'milk';
+            const originalQuantity = 1;
+
+            basket.addItem(description, originalQuantity);
+            basket.addItem(description, originalQuantity);
+
+            const items = basket.getItems();
+            const { quantity } = items[0];
+
+            assert.equal(items.length, 1);
+            assert.equal(quantity, 2);
+        });
     });
 });
