@@ -14,7 +14,7 @@ class Basket {
         const existingItem = this.items.find(item => item.description = description);
         
         if (Boolean(existingItem)) {
-            existingItem.quantity++;
+            existingItem.quantity += quantity;
         } else {
             const newItem = this.getNewItem(description, quantity);
             this.items.push(newItem);

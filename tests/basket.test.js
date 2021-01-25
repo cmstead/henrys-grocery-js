@@ -40,5 +40,23 @@ describe('Basket', function () {
             assert.equal(items.length, expectedItemsLength);
             assert.equal(quantity, expectedFinalQuantity);
         });
+
+        it('adds extra item quantity to existing quantity if item is already in basket', function () {
+            const basket = getBasket();
+
+            const description = 'milk';
+            const originalQuantity = 1;
+            const secondQuantity = 3;
+
+            basket.addItem(description, originalQuantity);
+            basket.addItem(description, secondQuantity);
+
+            const items = basket.getItems();
+            const { quantity } = items[0];
+
+            const expectedFinalQuantity = 4;
+
+            assert.equal(quantity, expectedFinalQuantity);
+        });
     });
 });
