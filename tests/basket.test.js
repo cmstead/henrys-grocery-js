@@ -15,9 +15,11 @@ describe('Basket', function () {
             const items = basket.getItems();
             const { description, quantity } = items[0];
 
-            assert.equal(items.length, 1);
-            assert.equal(description, 'bread');
-            assert.equal(quantity, 1);
+            const expectedItemsLength = 1;
+
+            assert.equal(items.length, expectedItemsLength);
+            assert.equal(description, originalDescription);
+            assert.equal(quantity, originalQuantity);
         });
 
         it('adds item to existing quantity if item is already in basket', function () {
