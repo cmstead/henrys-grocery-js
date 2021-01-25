@@ -1,17 +1,18 @@
-class Basket{
-    constructor(){
+class Basket {
+    constructor() {
         this.items = [];
     }
 
     addItem(description, quantity) {
-        if(this.items.find(item => item.description = description)) {
-            let item = this.items.find(item => item.description = description);
-            item.quantity++;
+        const existingItem = this.items.find(item => item.description = description);
+
+        if (Boolean(existingItem)) {
+            existingItem.quantity++;
         } else {
             this.items.push({
                 description,
                 quantity
-            });    
+            });
         }
     }
 

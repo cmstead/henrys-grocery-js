@@ -19,7 +19,7 @@
     },
     "nanocommit": {
         "testCommand": "mocha ./tests/**/*.test.js",
-        "blindCommit": false,
+        "blindCommit": true,
         "annotations": "nanocommit",
         "watchFiles": [
             "./app/**/*.js"
