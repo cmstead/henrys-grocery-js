@@ -34,8 +34,11 @@ describe('Basket', function () {
             const items = basket.getItems();
             const { quantity } = items[0];
 
-            assert.equal(items.length, 1);
-            assert.equal(quantity, 2);
+            const expectedItemsLength = 1;
+            const expectedFinalQuantity = 2;
+
+            assert.equal(items.length, expectedItemsLength);
+            assert.equal(quantity, expectedFinalQuantity);
         });
     });
 });
