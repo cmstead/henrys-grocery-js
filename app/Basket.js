@@ -1,3 +1,5 @@
+const { getItem } = require('./Item');
+
 class Basket {
     constructor() {
         this.items = [];
@@ -16,7 +18,7 @@ class Basket {
         if (Boolean(existingItem)) {
             existingItem.quantity += quantity;
         } else {
-            const newItem = this.getNewItem(description, quantity);
+            const newItem = getItem(description, quantity);
             this.items.push(newItem);
         }
     }
