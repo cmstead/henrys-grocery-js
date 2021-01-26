@@ -5,13 +5,6 @@ class Basket {
         this.items = [];
     }
 
-    getNewItem(description, quantity) {
-        return {
-            description,
-            quantity
-        };
-    }
-
     addItem(description, quantity) {
         const existingItem = this.items.find(item => item.description = description);
         
