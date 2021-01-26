@@ -99,5 +99,15 @@ describe('Basket', function () {
             assert.throws(() => basket.addItem(description, quantity),
                 'Quantity must be an integer that is 1 or greater');
         });
+
+        it('disallows non-number quantities', function () {
+            const basket = getBasket();
+
+            const description = 'Soup';
+            const quantity = 'test';
+
+            assert.throws(() => basket.addItem(description, quantity),
+                'Quantity must be an integer that is 1 or greater');
+        });
     });
 });
