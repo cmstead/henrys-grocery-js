@@ -1,12 +1,16 @@
 const { match } = require('matchlight');
 
+function isInt(value) {
+    return Math.floor(value) === value
+}
+
 class Item{
     constructor(description, quantity) {
-        function isInt(value) {
-            return Math.floor(value) === value
+        function isIntGreaterThan0(value) {
+            return isInt(value) && value > 0;
         }
 
-        if(quantity < 1 || !isInt(quantity)) {
+        if(!isIntGreaterThan0(quantity)) {
             throw new Error('Quantity must be an integer that is 1 or greater');
         }
 
