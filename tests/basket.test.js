@@ -78,4 +78,16 @@ describe('Basket', function () {
             assert.equal(quantity, expectedFinalQuantity);
         });
     });
+
+    describe('validating quantity', function () {
+        it('disallows quantities less than 1', function () {
+            const basket = getBasket();
+
+            const description = 'Soup';
+            const quantity = 0;
+
+            assert.throws(() => basket.addItem(description, quantity),
+                'Quantity must be an integer that is 1 or greater');
+        });
+    });
 });
