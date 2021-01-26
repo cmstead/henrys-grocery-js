@@ -15,7 +15,8 @@
     },
     "dependencies": {
         "date-fns": "^2.16.1",
-        "inquirer": "^7.3.3"
+        "inquirer": "^7.3.3",
+        "matchlight": "^2.1.0"
     },
     "nanocommit": {
         "testCommand": "mocha ./tests/**/*.test.js",
