@@ -21,6 +21,10 @@ class Item{
 
         this.description = description;
     }
+
+    updateQuantity(quantity) {
+        this.quantity += quantity;
+    }
 }
 
 module.exports = {
