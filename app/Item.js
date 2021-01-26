@@ -25,6 +25,10 @@ class Item{
     updateQuantity(quantity) {
         this.quantity += quantity;
     }
+
+    matchDescription(description) {
+        return this.description === description;
+    }
 }
 
 module.exports = {

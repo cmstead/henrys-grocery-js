@@ -6,11 +6,8 @@ class Basket {
     }
 
     addItem(description, quantity) {
-        function itemMatchesDescription(item) {
-            return item.description === description;
-        }
-
-        const existingItem = this.items.find(itemMatchesDescription);
+        const existingItem = this.items.find(
+            item => item.matchDescription(description));
 
         if (Boolean(existingItem)) {
             existingItem.updateQuantity(quantity);
