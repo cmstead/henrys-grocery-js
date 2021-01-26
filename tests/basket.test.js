@@ -41,6 +41,25 @@ describe('Basket', function () {
             assert.equal(quantity, expectedFinalQuantity);
         });
 
+        it('updates correct quantity of one item in basket when two exist', function () {
+            const basket = getBasket();
+
+            const milkDescription = 'milk';
+            const appleDescription = 'apple';
+            const originalQuantity = 1;
+
+            basket.addItem(milkDescription, originalQuantity);
+            basket.addItem(appleDescription, originalQuantity);
+            basket.addItem(appleDescription, originalQuantity);
+
+            const items = basket.getItems();
+            const { quantity } = items[1];
+
+            const expectedFinalQuantity = 2;
+
+            assert.equal(quantity, expectedFinalQuantity);
+        });
+
         it('adds extra item quantity to existing quantity if item is already in basket', function () {
             const basket = getBasket();
 
